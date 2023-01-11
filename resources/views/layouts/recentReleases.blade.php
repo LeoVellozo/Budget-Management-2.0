@@ -2,7 +2,8 @@
         <div class="investments">
             <div class="header">
                 <h2>Recents Releases</h2>
-                <button type="submit" href="#" class="btn btn-primary">New Release <span class="material-icons-sharp">add_circle</span></button>
+
+            @include('layouts.modalRelease')
             </div>
 
             <div class="investment">

@@ -19,12 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboardAdmin', [DashboardController::class, "index"]);
+Route::get('/releases', function () {
+    return view('releases');
+});
 
-
+Route::get('/categories', function () {
+    return view('categories');
+});
 
 Route::get('/dashboard', function () {
-    return view('dashboardAdmin');
+    return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

@@ -228,6 +228,10 @@ nav .profile-area .theme-btn span {
     font-size: 1.3rem;
 }
 
+span.material-icons-sharp {
+    color: red;
+}
+
 nav .profile-area .theme-btn .active {
     background: var(--color-dark);
     border-radius: var(--border-radius-2);
@@ -640,6 +644,81 @@ main .recent-transactions .card-details .card {
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius-2);
+}
+
+.releases {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background: var(--color-white) !important;
+    border-radius: var(--border-radius-2);
+    margin-top: 85px;
+}
+
+.newRelease h4 {
+    margin: 0;
+}
+
+.btn-several {
+    display: block;
+    width: 10%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-1);
+    padding: 0.6rem 0;
+    transition: all 300ms ease;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-several:hover {
+    box-shadow: 0 1rem 2rem var(--color-primary-light);
+}
+
+.card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background: var(--color-white) !important;
+    border-radius: var(--border-radius-2);
+}
+
+main .recent-orders {
+    margin-top: 0.2rem;
+}
+
+main .recent-orders h2 {
+    margin-bottom: 0.8rem;
+}
+
+main .recent-orders table {
+    background: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
+    transition: all 300ms ease;
+}
+
+main .recent-orders table:hover {
+    box-shadow: none;
+}
+
+main table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid rgba(132, 139, 200, 0.18);
+    color: var(--color-gray-dark);
+}
+
+main table tbody tr:last-child td {
+    border: none
+}
+
+main .recent-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-white);
 }
 
 
