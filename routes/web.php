@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReleaseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +21,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/releases', function () {
-    return view('releases');
+// Route::get('/releases', function () {
+//     return view('releases');
+// });
+
+Route::prefix('releases')->group(function(){
+    Route::get('/', [ReleaseController::class, 'index'])->name('releases-index');
+    Route::get('/create', [ReleaseController::class, 'create'])->name('releases-create');
+    Route::post('/', [ReleaseController::class, 'store'])->name('releases-store');
 });
 
-Route::get('/categories', function () {
-    return view('categories');
+Route::prefix('categories')->group(function(){
+    Route::get('/', [CategoryController::class, 'index'])->name('category-index');
+    Route::get('/create', [CategoryController::class, 'create'])->name('category-create');
+    Route::post('/', [CategoryController::class, 'store'])->name('category-store');
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -1,7 +1,11 @@
 
 <nav>
     <div class="container">
-        <img src="{{ url('assets/img/logo.png') }}" class="logo">
+       
+
+        <a href="{{url('dashboard')}}" title="Home Page">
+            <img src="{{ url('assets/img/logo.png') }}" class="logo">
+        </a> 
         <!-- <div class="search-bar">
             <span class="material-icons-sharp">search</span>
             <input type="search" placeholder="Search">
@@ -9,8 +13,8 @@
         <div class="d-flex justify-content-between align-items-center w-10">
             <div class="profile-area">
                 <div class="theme-btn">
-                    <span class="material-icons-sharp active">light_mode</span>
-                    <span class="material-icons-sharp">dark_mode</span>
+                    <span class="material-icons-sharp theme active">light_mode</span>
+                    <span class="material-icons-sharp theme">dark_mode</span>
                 </div>
                 <button id="menu-btn">
                     <span class="material-icons-sharp">menu</span>

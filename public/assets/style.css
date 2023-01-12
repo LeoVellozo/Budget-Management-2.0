@@ -228,7 +228,7 @@ nav .profile-area .theme-btn span {
     font-size: 1.3rem;
 }
 
-span.material-icons-sharp {
+.profile-area .theme-btn .theme {
     color: red;
 }
 
@@ -646,13 +646,14 @@ main .recent-transactions .card-details .card {
     border-radius: var(--border-radius-2);
 }
 
-.releases {
+
+/* .releases {
     padding: 0.5rem 1rem;
     margin-bottom: 0;
     background: var(--color-white) !important;
     border-radius: var(--border-radius-2);
     margin-top: 85px;
-}
+} */
 
 .newRelease h4 {
     margin: 0;
@@ -714,12 +715,13 @@ main table tbody tr:last-child td {
     border: none
 }
 
-main .recent-orders a {
+
+/* main .recent-orders a {
     text-align: center;
     display: block;
     margin: 1rem auto;
-    color: var(--color-white);
-}
+    color: var(--color-gray-dark);
+} */
 
 
 /*============== MEDIA QUERIES FOR TABLETS ==============*/

@@ -5,78 +5,53 @@
 
             @include('layouts.modalRelease')
             </div>
-
+          
             <div class="investment">
-                <img src="{{ url('assets/img/uniliver.png') }}">
-                <h4>Unilever</h4>
+                <span class="material-icons-sharp" style="color:green">monetization_on</span>
+                <h4>Salário</h4>
                 <div class="data-time">
                     <p>7 Nov, 2021</p>
                     <small class="text-muted">9:14pm</small>
                 </div>
-                <div class="bonds">
-                    <p>1402</p>
-                    <small class="text-muted">Bonds</small>
-                </div>
                 <div class="amount">
-                    <h4>$20,033</h4>
-                    <small class="danger">-4.27%</small>
-
+                    <h4>R$1.500,00</h4>
                 </div>
             </div>
-            <!-- END OF INVESTMENT-->
             <div class="investment">
-                <img src="{{ url('assets/img/tesla.png') }}">
-                <h4>Tesla</h4>
+                <span class="material-icons-sharp" style="color:red">monetization_on</span>
+                <h4>Farmácia</h4>
                 <div class="data-time">
-                    <p>1 Dec, 2021</p>
-                    <small class="text-muted">11:54am</small>
-                </div>
-                <div class="bonds">
-                    <p>5377</p>
-                    <small class="text-muted">Bonds</small>
+                    <p>10 Jan, 2023</p>
+                    <small class="text-muted">9:14pm</small>
                 </div>
                 <div class="amount">
-                    <h4>$720,110</h4>
-                    <small class="success">+38.27%</small>
-
+                    <h4>189,90</h4>
                 </div>
             </div>
-            <!-- END OF INVESTMENT-->
             <div class="investment">
-                <img src="{{ url('assets/img/monster.png') }}">
-                <h4>Unilever</h4>
+                <span class="material-icons-sharp" style="color:green">monetization_on</span>
+                <h4>Dividendos</h4>
                 <div class="data-time">
-                    <p>1 Dec, 2021</p>
-                    <small class="text-muted">4:02pm</small>
-                </div>
-                <div class="bonds">
-                    <p>700</p>
-                    <small class="text-muted">Bonds</small>
+                    <p>7 Nov, 2021</p>
+                    <small class="text-muted">9:14pm</small>
                 </div>
                 <div class="amount">
-                    <h4>$13,110</h4>
-                    <small class="success">+7.27%</small>
-
+                    <h4>R$739,78</h4>
                 </div>
             </div>
-            <!-- END OF INVESTMENT-->
             <div class="investment">
-                <img src="{{ url('assets/img/mcdonalds.png') }}">
-                <h4>McDonalds</h4>
+                <span class="material-icons-sharp" style="color:red">monetization_on</span>
+                <h4>Alimentação</h4>
                 <div class="data-time">
-                    <p>3 Dec, 2021</p>
-                    <small class="text-muted">8:17pm</small>
-                </div>
-                <div class="bonds">
-                    <p>5200</p>
-                    <small class="text-muted">Bonds</small>
+                    <p>7 Nov, 2021</p>
+                    <small class="text-muted">9:14pm</small>
                 </div>
                 <div class="amount">
-                    <h4>$20,033</h4>
-                    <small class="danger">-1,02%</small>
-
+                    <h4>R$700,00</h4>
                 </div>
             </div>
+            
+            
             <!-- END OF INVESTMENT-->
         </div>
         <!-- END OF INVESTMENTS-->

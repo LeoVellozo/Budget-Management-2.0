@@ -52,3 +52,24 @@ themeBtn.addEventListener('click', () => {
 
     themeBtn.querySelector('span:last-child').classList.toggle('active');
 })
+
+// MODAL
+
+$(document).ready(function() {
+    $('#categoriesModal form').on('submit', function(e) {
+        e.preventDefault();
+        var form = $(this);
+        $.ajax({
+            type: 'POST',
+            url: form.attr('action'),
+            data: form.serialize(),
+            success: function(data) {
+                $('#exampleModal').modal('hide');
+                // mostrar mensagem de sucesso ou atualizar a tabela de registros
+            },
+            error: function(data) {
+                // mostrar mensagem de erro ou destacar os campos inválidos
+            }
+        });
+    });
+});
