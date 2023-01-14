@@ -14,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboardAdmin');
+        return view('dashboard');
     }
 
     /**
@@ -35,7 +35,9 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $example = new \App\Http\Controllers\ReleaseController;
+        $example->store($request);
+        return redirect()->route('dashboard-index');
     }
 
     /**

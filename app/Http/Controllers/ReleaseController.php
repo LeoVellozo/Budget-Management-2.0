@@ -59,7 +59,16 @@ class ReleaseController extends Controller
      */
     public function edit(Release $release)
     {
-        //
+        return view('layouts.modalEdit')->with('release', $release);
+        // $release = Release::where('id',$id)->first();
+        // if(!empty($release))
+        // {
+        //     return view('release-edit', ['release'=>$release]);
+        // }
+        // else
+        // {
+        //     return redirect()->route('release-index');
+        // }
     }
 
     /**
@@ -69,9 +78,18 @@ class ReleaseController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Release $release)
+    public function update(Request $request, $id)
     {
-        //
+        $data = [
+            'name' => $request->name,
+            'type' => $request->type,
+            'data_release' => $request->data_release,
+            'category' => $request->category,
+            'value' => $request->value,
+            'obs' => $request->obs
+        ];
+        Release::where('id',$id)->update($data);
+        return redirect()->route('release-index');
     }
 
     /**
@@ -80,8 +98,9 @@ class ReleaseController extends Controller
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Release $release)
+    public function destroy($id)
     {
-        
+        Release::where('id',$id)->delete();
+        return redirect()->route('releases-index');
     }
 }
