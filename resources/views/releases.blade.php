@@ -3,17 +3,17 @@
 @section('title', 'Releases')
 
 @section('content')
-@include('layouts.modalRelease')
+{{-- @include('layouts.modalRelease') --}}
     @if(count($releases) > 0)
 
         <div class="tableCategory">
 
-            {{-- <div class="releases ">
+            <div class="releases ">
                 <div class=" newRelease d-flex d-inline justify-content-between align-items-center">
                     <h4>Releases</h4>
                     @include('layouts.modalRelease')
                 </div>
-            </div> --}}
+            </div>
 
             <div class=recent-orders>
                 <table id="releases" class="table table-hover-stripped">
@@ -43,16 +43,6 @@
                                 <th>{{ $release->category }}</th>
                                 <th>{{ $release->value }}</th>
                                 <th>{{ $release->obs }}</th>
-                                {{-- <th>
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Actions
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                        <li><a class="dropdown-item" href="#">Delete</a></li>
-                                        </ul>
-                                    </div> --}}
                                 <th class="d-sm-flex justify-content-center align-items-center">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoriesModal">
@@ -61,7 +51,7 @@
                                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                             </svg>
                                         </button>
-                                        <form action="" method="POST">
+                                        <form action="{{ route('releases-delete') }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" >

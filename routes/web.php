@@ -29,6 +29,7 @@ Route::prefix('releases')->group(function(){
     Route::get('/', [ReleaseController::class, 'index'])->name('releases-index');
     Route::get('/create', [ReleaseController::class, 'create'])->name('releases-create');
     Route::post('/', [ReleaseController::class, 'store'])->name('releases-store');
+    Route::post('/', [ReleaseController::class, 'delete'])->name('releases-delete');
 });
 
 Route::prefix('categories')->group(function(){

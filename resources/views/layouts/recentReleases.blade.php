@@ -4,6 +4,7 @@
                 <h2>Recents Releases</h2>
 
             @include('layouts.modalRelease')
+           
             </div>
           
             <div class="investment">

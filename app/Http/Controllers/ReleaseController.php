@@ -25,8 +25,6 @@ class ReleaseController extends Controller
      */
     public function create(Request $request)
     {
-        
-        $radioValue = $request->input('radio_field_name');
         return view('layouts.modalRelease');
     }
 
@@ -38,7 +36,6 @@ class ReleaseController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         Release::create($request->all());
         return redirect()->route('releases-index');
     }
@@ -85,6 +82,6 @@ class ReleaseController extends Controller
      */
     public function destroy(Release $release)
     {
-        //
+        
     }
 }
