@@ -11,7 +11,7 @@
 
         @include('layouts.cards')
 
-        <canvas id="chart"></canvas>      
+        <canvas id="chart"></canvas>
     </section>
     @include('layouts.recentReleases')
 

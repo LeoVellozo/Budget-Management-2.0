@@ -26,15 +26,15 @@ Route::get('/', function () {
 //     return view('releases');
 // });
 
-Route::prefix('releases')->group(function(){
-    Route::get('/', [ReleaseController::class, 'index'])->name('releases-index');
-    Route::get('/create', [ReleaseController::class, 'create'])->name('releases-create');
-    Route::post('/', [ReleaseController::class, 'store'])->name('releases-store');
-    Route::get('/{id}', [ReleaseController::class, 'edit'])->name('releases-edit');
-    Route::put('/{id}', [ReleaseController::class, 'update'])->name('releases-update');
-    // Route::post('/', [ReleaseController::class, 'delete'])->name('releases-delete');
-    Route::delete('/{id}',[ReleaseController::class, 'destroy'])->where('id','[0-9]+')->name('releases-destroy');
-});
+// Route::prefix('releases')->group(function(){
+//     Route::get('/', [ReleaseController::class, 'index'])->name('releases-index');
+//     Route::get('/create', [ReleaseController::class, 'create'])->name('releases-create');
+//     Route::post('/', [ReleaseController::class, 'store'])->name('releases-store');
+//     Route::get('/{id}', [ReleaseController::class, 'edit'])->name('releases-edit');
+//     Route::put('/{id}', [ReleaseController::class, 'update'])->name('releases-update');
+//     // Route::post('/', [ReleaseController::class, 'delete'])->name('releases-delete');
+//     Route::delete('/{id}',[ReleaseController::class, 'destroy'])->where('id','[0-9]+')->name('releases-destroy');
+// });
 
 Route::prefix('categories')->group(function(){
     Route::get('/', [CategoryController::class, 'index'])->name('category-index');
@@ -42,10 +42,15 @@ Route::prefix('categories')->group(function(){
     Route::post('/', [CategoryController::class, 'store'])->name('category-store');
 });
 
-Route::prefix('dashboard')->group(function(){
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard-index');
-    Route::get('/create', [DashboardController::class, 'create'])->name('dashboard-create');
-    Route::post('/', [DashboardController::class, 'store'])->name('dashboard-store');
+// Route::prefix('dashboard')->group(function(){
+//     Route::get('/', [DashboardController::class, 'index'])->name('dashboard-index');
+//     // Route::get('/create', [DashboardController::class, 'create'])->name('dashboard-create');
+//     Route::post('/', [DashboardController::class, 'store'])->name('dashboard-store');
+// });
+
+Route::group(['namespace => App\Http\Controllers'], function () {
+    Route::resource('dashboard', DashboardController::class);
+    Route::resource('releases', ReleaseController::class);
 });
 
 

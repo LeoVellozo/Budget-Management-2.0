@@ -9,13 +9,15 @@ class Release extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-            'name',
-            'type',
-            'category',
-            'value',
-            'obs',
-            // 'user_id',
-            'data_release'
-    ];
+    // protected $fillable = [
+    //         'name',
+    //         'type',
+    //         'category',
+    //         'value',
+    //         'obs',
+    //         // 'user_id',
+    //         'data_release'
+    // ];
+
+    protected $guarded = [];
 }

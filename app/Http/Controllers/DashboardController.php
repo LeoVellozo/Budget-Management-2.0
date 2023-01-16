@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
+use App\Models\Release;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,7 +15,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $release = new Release;
+        return view('dashboard')->with('release', $release);
     }
 
     /**
@@ -35,9 +37,9 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $example = new \App\Http\Controllers\ReleaseController;
+        $example = new ReleaseController;
         $example->store($request);
-        return redirect()->route('dashboard-index');
+        return redirect()->route('dashboard.index');
     }
 
     /**

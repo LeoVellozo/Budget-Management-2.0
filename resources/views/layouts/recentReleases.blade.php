@@ -3,10 +3,10 @@
             <div class="header">
                 <h2>Recents Releases</h2>
 
-            @include('layouts.modalRelease')
-           
+            @include('layouts.modalRelease',['action' => route('dashboard.store'), 'method' => 'POST'])
+
             </div>
-          
+
             <div class="investment">
                 <span class="material-icons-sharp" style="color:green">monetization_on</span>
                 <h4>Salário</h4>
@@ -51,8 +51,8 @@
                     <h4>R$700,00</h4>
                 </div>
             </div>
-            
-            
+
+
             <!-- END OF INVESTMENT-->
         </div>
         <!-- END OF INVESTMENTS-->

@@ -7,7 +7,7 @@
             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
         </svg>
     </button>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="editRelease" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -17,12 +17,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                   <form action="{{ route('releases-update',['id'=>$release->id])}}" method="POST">
+                   <form action="{{ route('releases.update',$release->id)}}" method="POST">
                         @csrf
-                        @method('PUT')                    
+                        @method('PUT')
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="nameRelease" name="name" value="{{$release->name}}">   
+                            <input type="text" class="form-control" id="nameRelease" name="name" value="{{$release->name}}">
                         </div>
                         <div class="mb-3">
                             <label for="date" class="form-label">Date</label>
@@ -32,7 +32,7 @@
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="type" id="btnradio1" autocomplete="off" checked value="EA">
                         <label class="btn btn-outline-success" for="btnradio1" >Earnings</label>
-    
+
                         <input type="radio" class="btn-check" name="type" id="btnradio2" autocomplete="off" value="EX">
                         <label class="btn btn-outline-danger" for="btnradio2" >Expenses</label>
                         </div>

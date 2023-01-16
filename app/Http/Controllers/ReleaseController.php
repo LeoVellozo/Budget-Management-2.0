@@ -15,6 +15,7 @@ class ReleaseController extends Controller
     public function index()
     {
         $releases = Release::all();
+
         return view('releases')->with('releases', $releases);
     }
 
@@ -25,7 +26,7 @@ class ReleaseController extends Controller
      */
     public function create(Request $request)
     {
-        return view('layouts.modalRelease');
+        //
     }
 
     /**
@@ -36,8 +37,9 @@ class ReleaseController extends Controller
      */
     public function store(Request $request)
     {
+        $release = new Release;
         Release::create($request->all());
-        return redirect()->route('releases-index');
+        return redirect()->route('releases.index');
     }
 
     /**
@@ -52,23 +54,13 @@ class ReleaseController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
+     * Show the form for editing the specified reso
      * @param  \App\Models\Release  $release
      * @return \Illuminate\Http\Response
      */
     public function edit(Release $release)
     {
-        return view('layouts.modalEdit')->with('release', $release);
-        // $release = Release::where('id',$id)->first();
-        // if(!empty($release))
-        // {
-        //     return view('release-edit', ['release'=>$release]);
-        // }
-        // else
-        // {
-        //     return redirect()->route('release-index');
-        // }
+        return view('layouts.modalRelease')->with('release', $release);
     }
 
     /**
@@ -80,16 +72,17 @@ class ReleaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = [
-            'name' => $request->name,
-            'type' => $request->type,
-            'data_release' => $request->data_release,
-            'category' => $request->category,
-            'value' => $request->value,
-            'obs' => $request->obs
-        ];
+        // $data = [
+        //     'name' => $request->name,
+        //     'type' => $request->type,
+        //     'data_release' => $request->data_release,
+        //     'category' => $request->category,
+        //     'value' => $request->value,
+        //     'obs' => $request->obs
+        // ];
+        $data = $request->except(['_token','_method']);
         Release::where('id',$id)->update($data);
-        return redirect()->route('release-index');
+        return redirect()->route('releases.index');
     }
 
     /**
@@ -101,6 +94,6 @@ class ReleaseController extends Controller
     public function destroy($id)
     {
         Release::where('id',$id)->delete();
-        return redirect()->route('releases-index');
+        return redirect()->route('releases.index');
     }
 }
